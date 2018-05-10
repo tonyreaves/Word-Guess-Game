@@ -3,3 +3,28 @@ body {
     background: black;
     color: white;
 }
+h1 {
+    color: red;
+    font-style: italic;
+    font-size: 75px;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+
+#title {
+    float: left;
+    margin: 15px;
+}
+
+#subtitle {
+    float: left;
+    margin: 40px;
+}
+
+#rules {
+    margin: 20px;
+    text-align: center;
+}
+.wrong {color: white;}

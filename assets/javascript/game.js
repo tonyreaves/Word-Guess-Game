@@ -74,6 +74,9 @@ var villains = [
   loseText: ""}, 
 ]
 
+//loads up javascript
+document.addEventListener("DOMContentLoaded", function() { 
+
 //randomly chooses villain, assigns var
 var yourVillain = villains[Math.floor(Math.random() * villains.length)];
 
@@ -83,9 +86,19 @@ var remainingTries = 8;
 //sets remainingletters to word length
 var remainingLetters = yourVillain.name.length;
 
-//sets keyup to uppercase guess
-document.onkeyup = function(event) {
-  guess = event.key.toUpperCase;
+//sets guess as empty string
+var guess = "";
+
+var wrongGuess = "";
+
+//function to decrease letters left to guess
+function oneUp() {
+  (remainingLetters--);
+}
+
+//function to decrease remaining tries
+function oneDown() {
+  (remainingTries--);
 }
 
 //hides villain.name behind _
@@ -94,28 +107,57 @@ for (var i = 0; i < yourVillain.name.length; i++) {
  answerArray[i] = "_";
 }
 
-for (var j = 0; j < yourVillain.name.length; j++) {
-  if (yourVillain.name[j] === guess) {
-   answerArray[j] = guess;
-   remainingLetters --;
-   console.log(answerArray);
-   }
-  
+//sets keyup to uppercase guess 
+document.onkeyup = function(event){
+  console.log(event);
+  guess = event.key.toUpperCase;}
+
+//   for (var j = 0; j < yourVillain.name.length; j++) {
+//     if (yourVillain.name[j] === guess) {
+//      answerArray[j] = guess;
+//      remainingLetters --;
+//      console.log(answerArray[j]);
+//      }
+//      else {
+//       remainingTries--;
+//       guess=wrongGuess;
+//     }
+//       }
+//       console.log(remainingLetters);
+//       console.log(remainingTries);
+//       console.log(guess);
+// };
+
+
+
+document.getElementById("wrong").innerHTML = wrongGuess;
+
+
+
+//win condition- incomplete
+  if (remainingLetters < 1) {
+    alert(yourVillain.winText)
+    document.getElementById(yourVillain.image)
   }
 
-var guess = document.getElementById("blanks");
+  //lose condition- incomplete
+  if (remainingTries < 1) {
+    alert(yourVillain.loseText)
+    document.getElementById(yourVillain.image)
 
-document.addEventListener("DOMContentLoaded", function() { 
-console.log(yourVillain.name);
-console.log(answerArray);
-console.log(remainingLetters);
-console.log(remainingTries)
-console.log(guess)
+  }
+
+  console.log(yourVillain.name);
+  console.log(answerArray);
+  console.log(remainingLetters);
+  console.log(remainingTries)
+  console.log(guess)
+
+
 
 });
 
 //replace correctly guessed characters with correct letter
-//countdown of incorrect guesses
 //conditional for win/loss
 //lose screen with photo, lose text
 //win screen with photo, win text
