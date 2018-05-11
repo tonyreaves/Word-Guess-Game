@@ -93,12 +93,12 @@ var wrongGuess = "";
 
 //function to decrease letters left to guess
 function oneUp() {
-  (remainingLetters--);
+  return remainingLetters--;
 }
 
 //function to decrease remaining tries
 function oneDown() {
-  (remainingTries--);
+  return remainingTries--;
 }
 
 //hides villain.name behind _
@@ -107,26 +107,24 @@ for (var i = 0; i < yourVillain.name.length; i++) {
  answerArray[i] = "_";
 }
 
+
 //sets keyup to uppercase guess 
 document.onkeyup = function(event){
-  console.log(event);
-  guess = event.key.toUpperCase;}
-
-//   for (var j = 0; j < yourVillain.name.length; j++) {
-//     if (yourVillain.name[j] === guess) {
-//      answerArray[j] = guess;
-//      remainingLetters --;
-//      console.log(answerArray[j]);
-//      }
-//      else {
-//       remainingTries--;
-//       guess=wrongGuess;
-//     }
-//       }
-//       console.log(remainingLetters);
-//       console.log(remainingTries);
-//       console.log(guess);
-// };
+  guess = event.key.toUpperCase();
+  for (var j = 0; j < yourVillain.name.length; j++) {
+    if (yourVillain.name[j] === guess) {
+     answerArray[j] === guess;
+     oneUp();
+     }
+     else {
+      guess=wrongGuess;
+      console.log(answerArray[j]);
+      oneDown();
+    }
+}
+console.log(remainingLetters);
+console.log(remainingTries);
+};
 
 
 
@@ -151,8 +149,6 @@ document.getElementById("wrong").innerHTML = wrongGuess;
   console.log(answerArray);
   console.log(remainingLetters);
   console.log(remainingTries)
-  console.log(guess)
-
 
 
 });
