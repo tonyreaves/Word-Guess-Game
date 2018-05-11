@@ -6,25 +6,30 @@ body {
 h1 {
     color: red;
     font-style: italic;
-    font-size: 75px;
-    text-align: center;
+    font-size: 85px;
 }
+
 h2 {
     text-align: center;
 }
 
 #title {
     float: left;
-    margin: 15px;
+    margin: 10px;
 }
 
 #subtitle {
     float: left;
-    margin: 40px;
+    margin: 20px;
 }
 
 #rules {
-    margin: 20px;
+    margin: 30px;
     text-align: center;
 }
+
 .wrong {color: white;}
+
+#image {
+    width: 500px;
+}
