@@ -78,6 +78,12 @@ document.addEventListener("DOMContentLoaded", function() {
 //randomly chooses villain, assigns var
 var yourVillain = villains[Math.floor(Math.random() * villains.length)];
 
+//plays music?
+var tunes = document.getElementById("myAudio"); 
+function playAudio() { 
+  tunes.play(); 
+} 
+
 //sets remaining tries to 8
 var remainingTries = 8;
 
@@ -87,6 +93,7 @@ var remainingLetters = yourVillain.name.length;
 //sets guess as empty string
 var guess = "";
 
+//sets guesses as empty array
 var guesses = [];
 
 //function to decrease letters left to guess
@@ -122,18 +129,30 @@ document.onkeyup = function(event){
     console.log(remainingLetters);
 ;
 
+//resets
+function reset() {
+    clear()
+    var yourVillain = villains[Math.floor(Math.random() * villains.length)];
+    var tunes = document.getElementById("myAudio"); 
+    function playAudio() { 
+      tunes.play(); 
+    }   
+    remainingTries = 8;
+    remainingLetters = yourVillain.length;
+  }
 
 //win condition- incomplete
   if (remainingLetters < 1) {
     document.getElementById("message").innerHTML = yourVillain.winText;
-    document.getElementById("image").src = yourVillain.image;
-    
+    yourVillain.image = document.getElementById("image").src;
+    reset();
   }
 
   //lose condition- incomplete
   if (remainingTries < 1) {
     document.getElementById("message").innerHTML = yourVillain.loseText;
-    document.getElementById("image").src = yourVillain.image;
+    yourVillain.image = document.getElementById("image").src;
+    reset();
   }
 
   console.log(yourVillain.name);
