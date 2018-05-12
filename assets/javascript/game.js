@@ -2,72 +2,72 @@
 //array of villains
 var villains = [
   {name: "APOCALYPSE", 
-  image: "../images/apocalypse.jpg",
+  image: "./assets/images/apocalypse.jpg",
   winText: "We stopped Apocalypse! Good job X-Men!", 
   loseText:"You have failed, X-Men, and failure equals death! Now you die ... at the hands of APOCALYPSE!"},
 
   {name: "SAURON", 
-  image: "../images/sauron.jpg", 
+  image: "./assets/images/sauron.jpg", 
   winText: "Good job defeating SAURON! That dinosaur is history.", 
   loseText: "The skies belong to SAURON -- and so do your lives!"}, 
     
   {name: "JUGGERNAUT", 
-  image: "../images/juggernaut.jpg", 
+  image: "./assets/images/juggernaut.jpg", 
   winText: "Nice job, we stopped the JUGGERNAUT!", 
   loseText: "Ha Ha Ha! Nothing stops the JUGGERNAUT!"}, 
 
   {name: "MYSTIQUE", 
-  image: "../images/mystique.jpg", 
+  image: "./assets/images/mystique.jpg", 
   winText: "MYSTIQUE can't hide from the X-Men! Great job!", 
   loseText: "It is I, MYSTIQUE! You X-Men are so easily fooled."}, 
 
   {name: "STRYFE", 
-  image: "../images/stryfe.jpg", 
+  image: "./assets/images/stryfe.jpg", 
   winText: "Good job defeating STRYFE, X-Men!", 
   loseText: "Die, X-Men! Now the world will know to fear STRYFE!"}, 
 
   {name: "SENTINELS", 
-  image: "../images/sentinels.jpg", 
+  image: "./assets/images/sentinels.jpg", 
   winText: "We defeated the SENTINELS!", 
   loseText: "Mutants destroyed. SENTINELS returning to base."}, 
 
   {name: "MOJO", 
-  image: "../images/mojo.jpg", 
+  image: "./assets/images/mojo.jpg", 
   winText: "MOJO? I didn't realize that guy was still around.", 
   loseText: "I won? I won! Bow before MOJO!"}, 
 
   {name: "SINISTER", 
-  image: "../images/sinister.jpg", 
+  image: "./assets/images/sinister.jpg", 
   winText: "That was a close one. We defeated MR. SINISTER!", 
   loseText: "It takes more than a ragtag band of mutants to defeat MR. SINISTER!"},
 
   {name: "MAGNETO", 
-  image: "../images/magneto.jpg", 
+  image: "./assets/images/magneto.jpg", 
   winText: "With your help, we defeated our greatest foe, MAGNETO!", 
   loseText: "Greetings, X-Men. I bid you welcome to the site of your final battleground. You are going to die here, mutants. And neither your powers nor all your skills can save you from my wrath! Look on me, X-Men for I am your oldest, deadliest foe. Master of the legion of evil mutants -- and soon to be lord of all the world! I -- am -- MAGNETO!!"},
 
   {name: "BROOD", 
-  image: "../images/brood.jpg", 
+  image: "./assets/images/brood.jpg", 
   winText: "It wasn't easy, but we beat the BROOD!", 
   loseText: "We are the BROOD, and now, you are too!"},
 
   {name: "NIMROD", 
-  image: "../images/nimrod.jpg", 
+  image: "./assets/images/nimrod.jpg", 
   winText: "We've destroyed NIMROD!", 
   loseText: "To save mankind, NIMROD must destroy mutantkind!"},
 
   {name: "WHITEQUEEN", 
-  image: "../images/whitequeen.jpg", 
+  image: "./assets/images/whitequeen.jpg", 
   winText: "You helped us defeat the WHITE QUEEN!", 
   loseText: "You poor, dear, X-Men. Thinking you could beat the WHITE QUEEN."},
 
   {name: "SHADOWKING", 
-  image: "../images/shadowking.jpg", 
+  image: "./assets/images/shadowking.jpg", 
   winText: "Nice work! We won't be seeing the SHADOW KING again for a long time.", 
   loseText: "X-Men, the SHADOW KING will feast on your terror!"},
 
   {name: "SABRETOOTH", 
-  image: "../images/sabretooth.jpg", 
+  image: "./assets/images/sabretooth.jpg", 
   winText: "Good job beating SABRETOOTH.", 
   loseText: "SABRETOOTH just gave ya a war, and you lost."}, 
 ]
@@ -143,15 +143,17 @@ function reset() {
 
 //win condition- incomplete
   if (remainingLetters < 1) {
+    console.log(yourVillain.image);
     document.getElementById("message").innerHTML = yourVillain.winText;
-    yourVillain.image = document.getElementById("image").src;
-    reset();
+    document.getElementById("image").innerHTML = '<img src="'+ yourVillain.image +'">';
+    document.getElementById("image").innerHTML = '<img src="'+ "../../images/sabretooth.jpg" +'">';
   }
 
   //lose condition- incomplete
   if (remainingTries < 1) {
+    console.log(yourVillain.image);
     document.getElementById("message").innerHTML = yourVillain.loseText;
-    yourVillain.image = document.getElementById("image").src;
+    document.getElementById("image").innerHTML = '<img src="'+ yourVillain.image +'">';
     reset();
   }
 
