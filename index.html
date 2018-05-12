@@ -2,11 +2,12 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
-<title>Tony's Word Guessing Game</title>
+  <title>Tony's Word Guessing Game</title>
 
 
 </head>
@@ -14,25 +15,43 @@
 <body>
 
   <div class="container">
-  <div id="title" class="col-lg-8"><h1>X-MEN</h1></div>
-  <div id="subtitle" class="col-lg-1"><h2>WORD GUESS</h2></div>
-  <br><br><br><br><br> 
+    <div id="title" class="col-lg-7">
+      <h1>X-MEN</h1>
+    </div>
+    <div id="subtitle" class="col-lg-3">
+      <h2>WORD GUESS</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
 
 
-  <div id="rules" class="col-lg-12"><h4>X-MEN, FIGURE OUT WHO'S ATTACKING BEFORE IT'S TOO LATE!</h4>
-    <h3>PRESS ANY KEY TO GET STARTED!</h3></div>
-   
+  <div id="rules" class="col-lg-12">
+    <h6>X-MEN, FIGURE OUT WHO'S ATTACKING BEFORE IT'S TOO LATE!</h6>
+    <h3>PRESS ANY KEY TO GET STARTED!</h3>
+  </div>
 
-    <h3><span id="blanks"></span></h3>
+
+  <h3>
+    <span id="blanks"></span>
+  </h3>
   <script type="text/javascript" src="assets/javascript/game.js"></script>
 
-<div id="progress"></div>  
-<div id="image"></div>
-<div id="message"></div>
-<div id="wrong"></div>
+  <div class="container">
+    <div class = "row">
+    <div class = "col-lg-6" id="progress"></div>
+    <div id="wrong"></div>
+    <div id="message"></div>
+    <div class = "col-lg-6" id="image"></div>
+    </div>
+  </div>
 
-<audio src="assets/images/contra_stage_6.mid"></audio>
-</div>
+  <audio src="assets/images/contra_stage_6.mid"></audio>
+  </div>
 </body>
 
 

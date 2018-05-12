@@ -1,7 +1,4 @@
 
-//layout
-
-
 //array of villains
 var villains = [
   {name: "APOCALYPSE", 
@@ -72,7 +69,7 @@ var villains = [
   {name: "SABRETOOTH", 
   image: "../images/sabretooth.jpg", 
   winText: "Good job beating SABRETOOTH.", 
-  loseText: "You want a war? SABRETOOTH just gave ya a war."}, 
+  loseText: "SABRETOOTH just gave ya a war, and you lost."}, 
 ]
 
 //loads up javascript
@@ -90,7 +87,7 @@ var remainingLetters = yourVillain.name.length;
 //sets guess as empty string
 var guess = "";
 
-var wrongGuess = "";
+var guesses = [];
 
 //function to decrease letters left to guess
 function oneUp() {
@@ -115,33 +112,28 @@ document.onkeyup = function(event){
     if (yourVillain.name[j] === guess) {
      answerArray[j] = guess;
      oneUp()
-     console.log(answerArray)
-   //  console.log("Im True")
-     console.log(answerArray[j])
-     }
+     document.getElementById("progress").innerHTML = ("" + answerArray);
+     } 
     }
-    guess=wrongGuess;
+    guesses.push(guess);
+    document.getElementById("progress").innerHTML = ("" + answerArray);
+    document.getElementById("wrong").innerHTML = ("Already used:" + [guesses]);
     oneDown();
-  //  console.log("Im false")
+    console.log(remainingLetters);
+;
 
-console.log(remainingLetters);
-console.log(remainingTries);
-};
-
-
-
-document.getElementById("wrong").innerHTML = wrongGuess;
 
 //win condition- incomplete
   if (remainingLetters < 1) {
-    alert(yourVillain.winText);
-    document.getElementById("image") = yourVillain.image;
+    document.getElementById("message").innerHTML = yourVillain.winText;
+    document.getElementById("image").src = yourVillain.image;
+    
   }
 
   //lose condition- incomplete
   if (remainingTries < 1) {
-    alert(yourVillain.loseText);
-    document.getElementById("image") = yourVillain.image;
+    document.getElementById("message").innerHTML = yourVillain.loseText;
+    document.getElementById("image").src = yourVillain.image;
   }
 
   console.log(yourVillain.name);
@@ -151,9 +143,8 @@ document.getElementById("wrong").innerHTML = wrongGuess;
   console.log(yourVillain.winText)
 
 
-});
+}});
 
-//replace correctly guessed characters with correct letter
 //conditional for win/loss
 //lose screen with photo, lose text
 //win screen with photo, win text

@@ -3,24 +3,21 @@ body {
     background: black;
     color: white;
 }
+
 h1 {
     color: red;
     font-style: italic;
-    font-size: 85px;
-}
-
-h2 {
-    text-align: center;
+    font-size: 100px;
 }
 
 #title {
     float: left;
-    margin: 10px;
+    margin-top: 30px;
 }
 
 #subtitle {
     float: left;
-    margin: 20px;
+    margin: 40px;
 }
 
 #rules {
@@ -28,8 +25,21 @@ h2 {
     text-align: center;
 }
 
-.wrong {color: white;}
+.wrong {
+    position: relative;
+
+}
 
 #image {
     width: 500px;
 }
+
+.container {
+    clear: both;
+    position: relative;
+}
+
+#progress {
+    position: relative;
+}
+
