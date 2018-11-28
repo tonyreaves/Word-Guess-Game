@@ -1,46 +1,57 @@
 body {
-    font-family: 'Press Start 2P', cursive;
-    background: black;
-    color: white;
+  font-family: "Press Start 2P", cursive;
+  background: black;
+  color: white;
 }
 
 h1 {
-    color: red;
-    font-style: italic;
-    font-size: 100px;
+  color: red;
+  font-style: italic;
+  font-size: 100px;
 }
 
 #title {
-    float: left;
-    margin-top: 30px;
+  float: left;
+  margin-top: 25px;
 }
 
 #subtitle {
-    float: left;
-    margin: 40px;
+  float: left;
+  margin: 25px;
 }
 
 #rules {
-    margin: 30px;
-    text-align: center;
+  margin: 30px;
+  text-align: center;
 }
 
 .wrong {
-    position: relative;
-
+  position: relative;
 }
 
 #image {
-    width: 500px;
-    height: 500px;
+  width: 500px;
+  height: 500px;
 }
 
 .container {
-    clear: both;
-    position: relative;
+  clear: both;
+  position: relative;
+  height: 220px;
 }
 
 #progress {
-    position: relative;
+  position: relative;
 }
 
+#start {
+  background: green;
+  color: white;
+  margin: 10px;
+}
+
+#reset {
+  background: red;
+  color: white;
+  margin: 10px;
+}
